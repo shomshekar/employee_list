@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h4 style="text-align:center; color:red;" >Add Employee</h4>
+        <div style="text-align: center;">
+            <form method="POST">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" value="Submit">
+                <a href="/employee-list" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </body>
+</html>

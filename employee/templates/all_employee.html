@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Employees</h1>
+
+<a href="/add-employee"> Add New Employee </a>
+  
+<ul>
+  {% for x in employees %}
+  <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a> | <a href="update/{{ x.id }}">Update</a> | 
+    <form action="delete/{{x.id}}" method="post">
+      {% csrf_token %}
+      <input type="submit" value="Delete">
+    </form>
+  </li>
+  {% endfor %}
+</ul>
+
+</body>
+</html>
